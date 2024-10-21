@@ -42,22 +42,14 @@
 <h3>Contact</h3>
 </div>
 
-<form class="input-box" id="contactForm" action="https://a.appah.idcp.nl" method="post">
-    <input type="text" placeholder="Naam">
-    <input type="email" placeholder="Email" required>
-    <input type="number" placeholder="Nummer">
-    <input type="subject" placeholder="Onderwerp">
-    <textarea placeholder="Tekst" style="height: 275px;"></textarea> 
-     <a type="button" class="btn btn-success btn-lg" onclick="submitForm()" style="margin: 25px;"> Verstuur </a>
+<form class="input-box" id="contactForm" action="process.php" method="post">
+  <input type="text" name="name" placeholder="Naam" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="text" name="subject" placeholder="Onderwerp" required>
+  <textarea name="message" placeholder="Tekst" style="height: 275px;" required></textarea> 
+  <button type="submit" class="btn btn-success btn-lg" style="margin: 25px;">Verstuur</button>
 </form>
 
-
-<!--<form id="contactForm" onsubmit="submitForm(event)">
-  <input type="text" id="name" name="name" placeholder="Your Name">
-  <input type="email" id="email" name="email" placeholder="Your Email">
-  <textarea id="message" name="message" placeholder="Your Message"></textarea>
-  <button type="submit">Submit</button>
-</form>-->
       
 
 
