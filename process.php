@@ -1,15 +1,15 @@
 <?php
-// Voeg CORS headers toe om cross-origin aanvragen mogelijk te maken
-header("Access-Control-Allow-Origin: *");  // Toestaan van alle domeinen
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");  // Toestaan van POST, GET, en OPTIONS methoden
-header("Access-Control-Allow-Headers: Content-Type");  // Toestaan van de 'Content-Type' header
 
-// Behandel een OPTIONS-aanvraag en beëindig direct
+header("Access-Control-Allow-Origin: *");  
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");  
+header("Access-Control-Allow-Headers: Content-Type");  
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Check of het een POST-aanvraag is
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ontvang de waarden van het formulier
     $name = htmlspecialchars($_POST['name']);
