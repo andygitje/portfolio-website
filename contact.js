@@ -1,34 +1,32 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Voorkom standaardformulieractie
 
-    
-    if (name === "" || email === "" || subject === "" || message === "") {
-        alert("Vul alle velden in voordat je het formulier verstuurt.");
-        event.preventDefault(); 
-        return; 
+    // Verzamel formuliergegevens
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    try {
+        // Verstuur POST-verzoek naar de server
+        const response = await fetch("/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+        });
+
+        // Controleer of de e-mail succesvol is verzonden
+        const result = await response.text();
+        document.getElementById("responseMessage").textContent = result;
+    } catch (error) {
+        console.error("Fout bij het verzenden van de e-mail:", error);
+        document.getElementById("responseMessage").textContent = "Er ging iets mis bij het versturen van je bericht. Probeer het later opnieuw.";
     }
-    
-    var formData = new FormData(document.getElementById("contactForm"));
-
-   
-    fetch('process.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.text()) 
-    .then(result => {
-        alert('Formulier succesvol verzonden!'); 
-        console.log(result); 
-    })
-    .catch(error => {
-        alert('Er is een fout opgetreden bij het verzenden van het formulier.');
-        console.error('Error:', error); 
-    });
-
-    
-    event.preventDefault();
 });
