@@ -1,106 +1,190 @@
 
 .foto{
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    margin-top: 20px;
-    align-content: center;
-    margin-left: 50px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  margin-top: 20px;
+  align-content: center;
+  margin-left: 50px;
 }
 
 .tekst{
-    align-content: center;
+  align-content: center;
 }
 
 .container-image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 75px;
-    padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 75px;
+  padding-top: 50px;
 }
 
-section{
-  height: 100vh;
-}
 
-.sectionn{
-  padding-bottom: 35px;
-}
 
-  .border-b {
-    border-top: solid 2px whitesmoke;
-    height: 2px;
-    margin-bottom: 50px; 
-  }
+.border-b {
+  border-top: solid 2px whitesmoke;
+  height: 2px;
+  margin-bottom: 50px; 
+}
 
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    border-top: solid 2px whitesmoke;
-    
-    margin: 0 50px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  border-top: solid 2px whitesmoke;
+  
+  margin: 0 50px;
+}
 
 .bxl-linkedin {
-    padding: 12px;
+  padding: 12px;
 }
 
 .icon-container {
-   font-size: 30px; 
+ font-size: 30px; 
 }
 
 .aboutt {
-  text-align: center;
-  padding-top: 20px;
+text-align: center;
+padding-top: 20px;
 }
 
 .chson {
-  text-align: left; 
-  display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  max-width: 600px; 
-  margin: 0 auto; 
-  padding-top: 20px;
+text-align: left; 
+display: flex;
+flex-direction: column; 
+justify-content: center; 
+align-items: center; 
+max-width: 600px; 
+margin: 0 auto; 
+padding-top: 20px;
 }
 
 .input-box {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 10px; 
-  margin: 0 auto; 
-  width: 100%; 
-  max-width: 550px; 
+display: flex;
+flex-direction: column; 
+align-items: center; 
+justify-content: center; 
+gap: 10px; 
+margin: 0 auto; 
+width: 100%; 
+max-width: 550px; 
 }
 
 .input-box input, .input-box textarea {
-  width: 100%; 
-  padding: 10px; 
-  border-radius: 8px; 
-  border: 1px solid #ccc; 
+width: 100%; 
+padding: 10px; 
+border-radius: 8px; 
+border: 1px solid #ccc; 
 }
 
 
-
 .contactos {
-  text-align: center;
-  padding: 25px;
+text-align: center;
+padding: 25px;
 }
 
 
 .form-signin {
-  max-width: 400px;
-  padding-top: 150px;
+max-width: 400px;
+padding-top: 150px;
 }
 
+.porto {
+text-align: center;
+padding-top: 25px;
+}
 
+.psfo {
+  height: 400px; 
+  width: 800px;
+  display: flex;      
+  justify-content: center;   
+  align-items: center;
+}
 
+.secto {
+display: flex;
+flex-direction: column; 
+align-items: center;
+max-width: 600px;
+margin: 0 auto;
+}
 
+.vsth{
+height: 400px;
+  width: 700px;
+}
 
- 
+.vscs {
+height: 400px;
+  width: 700px;
+}
+
+.tdes {
+height: 400px;
+  width: 800px;
+}
+
+.klt {
+height: 400px;
+  width: 1150px;
+}
+
+.detam {
+height: 400px;
+  width: 700px;
+}
+
+.vpy {
+height: 400px;
+  width: 700px;
+}
+
+.secson {
+display: flex;
+flex-direction: column; 
+align-items: center;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.tikson {
+text-align: center;
+padding-top: 25px;
+}
+
+p {
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 700px){
+  .container-image{
+    flex-direction: column-reverse;
+    padding-left: 45px;
+  }
+  .chson{
+    padding-left: 40px;
+  }
+  .secson{
+    padding-left: 25px;
+  }
+  .secto{
+    padding-left: 25px;
+  }
+
+  .img-mobile{
+    width: 100vw;
+    height: auto;
+  }
+  .foto{
+    height: auto;
+    width: 80vw;
+  }
+
+  .ps-5{
+    padding-left: 0px !important;
+  }
+}

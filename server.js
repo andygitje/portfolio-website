@@ -2,16 +2,19 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+const cors = require('cors');
+
 
 const app = express();
-const port = 5500;
+const PORT = 5500;
+app.use(cors());
 
-// Zorg dat express statische bestanden kan serveren vanuit de "public" map
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route om de e-mail te verzenden
 app.post('/send-email', (req, res) => {
+    console.log("Received POST request for /send-email");
+    console.log(req.body);  
     const { name, email, subject, message } = req.body;
 
     const transporter = nodemailer.createTransport({
@@ -34,15 +37,14 @@ app.post('/send-email', (req, res) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
-            res.send('Er ging iets mis bij het verzenden van de e-mail.');
+            res.status(500).send('Er ging iets mis bij het verzenden van de e-mail.');
         } else {
             console.log('Email sent: ' + info.response);
-            res.send('E-mail succesvol verzonden!');
+            res.redirect('/thankyou.html');
         }
     });
 });
 
-// Start de server
-app.listen(port, () => {
-    console.log(`Server draait op http://localhost:${port}`);
-});
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+  });
