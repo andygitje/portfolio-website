@@ -38,10 +38,6 @@ footer {
   margin: 0 50px;
 }
 
-.bxl-linkedin {
-  padding: 12px;
-}
-
 .icon-container {
  font-size: 30px; 
 }
@@ -159,6 +155,26 @@ padding-top: 25px;
 p {
   font-weight: 500;
 }
+
+footer .icon-container a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+footer .icon-container i {
+  font-size: 24px; 
+  margin: 0 10px; 
+}
+
+footer p {
+  margin: 10px 0 0; 
+  font-size: 14px; 
+  text-align: center; 
+  color: #333; 
+}
+
+
+
 
 @media only screen and (max-width: 700px){
   .container-image{
